@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+      <div id="navbar-container"></div>
+    </header>
+
+<section class="hero">
+    <div class="hero-content">
+
+        <h1>
+            Elevating Spaces
+        </h1>
+
+        <h3>
+            <span class="orange">Solid</span>.
+            Stylish.
+            <span class="red">Superior</span>.
+        </h3>
+
+        <button class="Button">
+            Enquire Us
+        </button>
+
+    </div>
+    <div class="hero-images">
+
+            <img src="images/download (8) 1.png" class="img img1">
+            <img src="images/Instagram 1.png" class="img img2">
+            <img src="images/download (1) 1.png" class="img img3">
+            <img src="images/How To Remove Scratches On Ceramic Tile Floors 1.png" class="img img4">
+            <img src="images/image 9.png" class="img img5">
+
+        </div>
+
+    </section>
+
+    <section class="collection">
+
+        <div class="section-header">
+
+            <h2>Collection</h2>
+
+            <a href="#">Explore All</a>
+
+        </div>
+
+        <div class="collection-grid">
+            <div class="collection-card">
+
+                <img src="images/Group 25.png" alt="">
+
+                <div class="overlay"></div>
+
+                <h3>Italian Marble Collection</h3>
+
+            </div>
+            <div class="collection-card">
+
+                <img src="images/Group 26.png" alt="">
+
+                <div class="overlay"></div>
+
+                <h3>Premium Granite Series</h3>
+
+            </div>
+            <div class="collection-card">
+
+                <img src="images/Group 27.png" alt="">
+
+                <div class="overlay"></div>
+
+                <h3>Luxury Floor Tiles</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="projects">
+
+        
+        <div class="section-header projects-header-section">
+            <a href="#">Explore All</a>
+            <h2>Our Projects</h2>            
+
+        </div>
+
+        <div class="projects-grid">
+            <div class="projects-card">
+
+                <img src="images/Rectangle 88.png" alt="">
+
+                <div class="overlay"></div>
+
+                <h3>Italian Marble Collection</h3>
+
+            </div>
+            <div class="projects-card">
+
+                <img src="images/Rectangle 89.png" alt="">
+
+                <div class="overlay"></div>
+
+                <h3>Premium Granite Series</h3>
+
+            </div>
+            <div class="projects-card">
+
+                <img src="images/Rectangle 90.png" alt="">
+
+                <div class="overlay"></div>
+
+                <h3>Luxury Floor Tiles</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="about">
+
+    <h2>About Us</h2>
+
+        <div class="about-container">
+
+            <div class="about-image">
+                <img src="images/Rectangle 2.png" alt="">
+            </div>
+
+            <div class="about-content">
+
+                <div class="about-line"></div>
+
+                <p>
+                    lorem ipsum
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="features">
+
+            <div class="feature-card active">
+                Premium Quality
+            </div>
+
+            <div class="feature-card">
+                Feature 2
+            </div>
+
+            <div class="feature-card">
+                Feature 3
+            </div>
+
+            <div class="feature-card">
+                Feature 4
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="gallery">
+        <div class="gallery-header">
+            <h2>Gallery</h2>
+            <div class="gallery-line"></div>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-left">
+                <img src="images/download (9) 2.png" alt="">
+            </div>
+            <div class="gallery-center">
+
+                <img src="images/10 Mistakes to Avoid During Your Kitchen Renovation, According to Interior Designers 1.png" alt="">
+                <img src="images/How To Remove Scratches On Ceramic Tile Floors 3.png" alt="">
+
+            </div>
+            <div class="gallery-right">
+
+                <img src="images/download (10) 1.png" alt="">
+
+                <a href="#">
+                    Explore →
+                </a>
+
+            </div>
+        </div>
+
+        <button class="Button">
+            Enquire Us
+        </button>
+
+    </section>
+
+    
+    <div id="footer-container"></div>
+    <script>
+   
+        fetch('./components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+
+                document.getElementById('navbar-container').innerHTML = data;
+
+                const menuBtn = document.getElementById("menu-btn");
+                const navLinks = document.getElementById("nav-links");
+
+                menuBtn.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                });
+
+            });
+    </script>
+    <script>
+    fetch('./components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+    
+</body>
+</html>

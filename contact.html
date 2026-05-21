@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Contact Page</title>
+</head>
+<body>
+    <header>
+      <div id="navbar-container"></div>
+    </header>
+
+    <section class="contact-page">
+
+        <div class="contact-heading">
+            <h1>Feel free to reach out to us!</h1>
+        </div>
+
+        <div class="contact-container">
+        
+            <div class="contact-info-box">
+
+                <div class="overlay"></div>
+
+                <div class="contact-content">
+
+                    <h2>Contact Information</h2>
+                    <p>Say something to start a chat!</p>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 95934 33533</span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>vighneshwaramarbles@gmail.com</span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>
+                            nh-2, near Ghagharburi Mandir,<br>
+                            Asansol, India, West Bengal
+                        </span>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Social Links</h4>
+
+                        <div class="contact-social-icons">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="contact-form-box">
+
+                <form>
+
+                    <div class="input-row">
+
+                        <div class="input-group">
+                            <label>First Name</label>
+                            <input type="text">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Last Name</label>
+                            <input type="text">
+                        </div>
+
+                    </div>
+
+                    <div class="input-row">
+
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="text">
+                        </div>
+
+                    </div>
+
+                    <div class="category-section">
+
+                        <label>Select Category</label>
+
+                        <div class="radio-group">
+
+                            <label><input type="radio" name="cat"> Tiles</label>
+
+                            <label><input type="radio" name="cat"> Marbles</label>
+
+                            <label><input type="radio" name="cat"> Granites</label>
+
+                            <label><input type="radio" name="cat"> Bathware</label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="message-box">
+                        <label>Message</label>
+
+                        <textarea placeholder="Write your message..."></textarea>
+                    </div>
+
+                    <button type="submit" class="send-btn">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div id="footer-container"></div>
+    <script>
+   
+        fetch('./components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+
+                document.getElementById('navbar-container').innerHTML = data;
+
+                const menuBtn = document.getElementById("menu-btn");
+                const navLinks = document.getElementById("nav-links");
+
+                menuBtn.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                });
+
+            });
+    </script>
+<script>
+fetch('./components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+    });
+</script>
+</body>
+</html>
