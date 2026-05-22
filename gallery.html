@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="gallery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+
+    <title>Gallery</title>
+</head>
+<body>
+    <header>
+      <div id="navbar-container"></div>
+    </header>
+
+     <div class="filters">
+
+        <select>
+        <option>Indoor</option>
+        <option>Outdoor</option>
+        </select>
+
+        <select>
+        <option>Living Room</option>
+        <option>Kitchen</option>
+        <option>Bathroom</option>
+        <option>Bedroom</option>
+        </select>
+
+    </div>
+    <div class="showcase-wrapper">
+        <button class="arrow left">
+        <i class="fa-solid fa-chevron-left"></i>
+        </button>
+    <div class="showcase-box">
+        <div class="showcase-card">
+        <div class="left-panel first-card">
+
+            <h2>Living Rooms</h2>
+
+            <div class="small-images">
+
+            <img src="images/Rectangle 72.png" alt="">
+            <img src="images/Rectangle 73.png" alt="">
+
+            </div>
+
+            <div class="tall-image">
+            <img src="images/Rectangle 74.png" alt="">
+            </div>
+
+        </div>
+
+        <div class="right-panel">
+
+            <img src="images/Rectangle 78.png" alt="">
+
+        </div>
+        
+    </div>
+
+        </div>
+
+        <button class="arrow right">
+        <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+
+
+    <!-- CTA -->
+    <div class="cta">
+
+        <p>Like our work?</p>
+        <button>Contact Us!</button>
+
+    </div>
+
+</section>
+
+    <div id="footer-container"></div>
+    <script>
+   
+        fetch('./components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+
+                document.getElementById('navbar-container').innerHTML = data;
+
+                const menuBtn = document.getElementById("menu-btn");
+                const navLinks = document.getElementById("nav-links");
+
+                menuBtn.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                });
+
+            });
+    </script>
+    <script>
+    fetch('./components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+    
+</body>
+</html>

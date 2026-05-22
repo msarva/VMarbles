@@ -1,0 +1,151 @@
+header{
+    position:absolute;
+    top:20px;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+.collection-hero{
+    height:100vh;
+    background:url("images/ChatGPT\ Image\ May\ 21\,\ 2026\,\ 05_51_20\ PM.png") center/cover no-repeat;
+    position:relative;
+    padding:30px;
+    background-color:rgb(228, 228, 241);
+}
+
+.collection{
+  padding: 140px 40px;
+}
+
+.hero-text{
+  position:absolute;
+  left:120px;
+  top:180px;
+}
+
+.hero-text h1{
+  font-size:80px;
+  font-family: serif;
+  font-weight:300;
+  line-height:1.1;
+  font-family:"Italiana", serif;
+}
+
+.hero-text h3{
+  font-size:24px;
+  font-weight:500;
+  margin-bottom:30px;
+  font-family:"Italiana", serif;
+}
+
+
+
+.filters{
+  display:flex;
+  gap:10px;
+  margin-bottom:60px;
+}
+
+.filters select{
+  padding:8px 15px;
+  border:1px solid #aaa;
+  background:white;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.card{
+  position:relative;
+}
+
+.card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+
+.card button{
+  position:absolute;
+  top:15px;
+  right:15px;
+
+  background:black;
+  color:white;
+
+  border:none;
+  padding:8px 15px;
+
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.card h3{
+  text-align:center;
+  padding:15px;
+  border:1px solid #999;
+  background:#f5f1e8;
+}
+
+/* FOOTER */
+
+.footer{
+  background:#0e0e0e;
+  color:white;
+
+  padding:60px 40px;
+
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.footer-links{
+  display:flex;
+  gap:80px;
+}
+
+.footer h4{
+  margin-bottom:15px;
+}
+
+.footer p{
+  margin-bottom:10px;
+  color:#bbb;
+}
+
+@media(max-width:900px){
+
+  .navbar{
+    width:100%;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .hero-text{
+    position:absolute;
+    left:40px;
+    top:90px;
+  }
+
+  .hero-text h1{
+    font-size:40px;
+  }
+  .hero-text h3{
+    font-size:25px;
+  }
+  .hero-text h3 span{
+    display:block;
+  }
+
+  .footer{
+    flex-direction:column;
+    gap:40px;
+  }
+
+}
