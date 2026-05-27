@@ -12,21 +12,166 @@
     gap:28px;
 }
 
-.side-thumb img{
-    width:80px;
-    height:150px;
-    border-radius:12px;
-    object-fit:cover;
-}
-.featured-image img{
-    width:330px;
+.featured-top{
+    position:relative;
+
+    width:500px;
     height:420px;
-    object-fit:cover;
-    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
 }
 .featured-content{
-    width:350px;
+    width:420px;
 }
+.tag{
+    background:#d96a2b;
+    color:white;
+
+    padding:6px 16px;
+
+    border-radius:20px;
+
+    font-size:12px;
+}
+
+
+.slider{
+    position:relative;
+
+    width:100%;
+    height:100%;
+}
+
+.slide{
+    position:absolute;
+
+    width:340px;
+    height:440px;
+
+    top:0;
+    left:170px;
+
+    opacity:0;
+
+    transition:none;
+
+    pointer-events:none;
+}
+
+.slide.active{
+    width:340px;
+    height:440px;
+
+    left:170px;
+    top:0;
+
+    opacity:1;
+    z-index:3;
+
+    filter:none;
+
+    transform:
+        translateX(0)
+        scale(1);
+}
+.slide.next{
+    width:340px;
+    height:440px;
+
+    left:420px;
+    top:0;
+
+    opacity:0;
+
+    z-index:1;
+}
+.slide.instant{
+    transition:none !important;
+}
+.slide.prev{
+    width:250px;
+    height:360px;
+
+    left:40px;
+    top:50px;
+
+    opacity:0.7;
+    z-index:2;
+
+    filter:blur(4px);
+
+   transform:
+        translateX(-150px)
+        scale(0.55);
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        opacity 0.2s ease;
+}
+.slide.animate-to-active{
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        opacity 0.2s ease;
+
+    opacity:1;
+
+    filter:blur(0);
+
+    transform:
+        translateX(0)
+        scale(1);
+
+    z-index:5;
+}
+.slide.hidden{
+    opacity:0;
+    pointer-events:none;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+ .next-btn{
+    position:absolute;
+
+    left:110%;
+    bottom:-20px;
+
+    width:62px;
+    height:62px;
+
+    border:none;
+    border-radius:50%;
+    color:white;
+
+    font-size:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.next-btn:hover{
+    transform:scale(1.08);
+    background:hsl(0, 100%, 100%);
+}
+
 
 .tag{
     background:#d96a2b;
@@ -35,18 +180,31 @@
     border-radius:18px;
     font-size:12px;
 }
+.featured-content h1,
+.featured-content p{
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
 
 .featured-content h1{
     font-family:"Italiana", serif;
-    font-size:58px;
-    font-weight:500;
-    line-height:1;
-    margin:18px 0;
+    font-size:76px;
+    font-weight:400;
+    line-height:0.95;
+
+    margin:24px 0;
 }
 
 .featured-content p{
-    font-size:20px;
+    font-size:22px;
     color:#555;
+    line-height:1.4;
+
+    transition:0.35s ease;
+}
+#feature-title{
+    transition:0.35s ease;
 }
 .portfolio{
     padding:20px 70px;
@@ -111,6 +269,119 @@
 .wide{
     grid-column:span 2;
 }
+.project-popup{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.45);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.35s ease;
+
+    z-index:999;
+}
+
+.project-popup.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.popup-box{
+    width:90%;
+    max-width:1000px;
+
+    background:#ece8de;
+    height:600px;
+    padding:40px;
+
+    display:flex;
+    gap:60px;
+
+    position:relative;
+}
+
+.close-popup{
+    position:absolute;
+
+    top:16px;
+    right:20px;
+
+    border:none;
+    background:none;
+
+    font-size:28px;
+    cursor:pointer;
+}
+
+.popup-left{
+    flex:1;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.popup-left img{
+    width:100%;
+    max-width:520px;
+    height:500px;
+
+    object-fit:cover;
+}
+
+.popup-arrow{
+    position:absolute;
+
+    width:46px;
+    height:46px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#555;
+    color:white;
+
+    cursor:pointer;
+}
+
+.popup-arrow.left{
+    left:-20px;
+}
+
+.popup-arrow.right{
+    right:-20px;
+}
+
+.popup-right{
+    width:420px;
+
+    padding-top:40px;
+}
+
+.popup-right h2{
+    font-size:42px;
+    font-family:"Italiana", serif;
+    font-weight:400;
+
+    margin-bottom:10px;
+}
+
+.popup-subtitle{
+    color:#666;
+    margin-bottom:40px;
+}
+
+
+
+
 
 @media (max-width:768px){
 

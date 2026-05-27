@@ -3,75 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collection</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <title>Collections</title>
+
     <link rel="stylesheet" href="collection.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/aatjs/dist/aat.min.js"></script>
+    <script src="collection.js" defer></script>
+
 </head>
+
 <body>
     <header>
       <div id="navbar-container"></div>
     </header>
 
-    <section class="collections-page">
+<section class="collections-page">
 
     <div class="collections-header">
         <h1>Collections</h1>
         <div class="collections-line"></div>
     </div>
 
-    <div class="collection-box beige">
+    <div class="cards">
 
-        <div class="collection-image large">
-            <img src="images/Warm Neutral Material Moodboard with Marble, Wood & Brass 2.png" alt="">
+        <!-- CARD 1 -->
+    <a href="collection1.html" class="card-link">
+        <div class="card">
+            <div class="card__inner collection-box beige">
+
+                <div class="collection-image">
+                    <img src="images/Warm Neutral Material Moodboard with Marble, Wood & Brass 2.png" alt="">
+                </div>
+
+                <div class="collection-content">
+                    <h2>
+                        Natural Stone &
+                        Architectural
+                        Surfaces
+                    </h2>
+
+                    <button>Explore Collection</button>
+                </div>
+
+            </div>
         </div>
+    </a>
 
-        <div class="collection-content">
-            <h2>
-                Natural Stone & 
-                Architectural 
-                Surfaces
-            </h2>
+    <a href="collection2.html" class="card-link">
+        <div class="card">
+            <div class="card__inner collection-box light">
 
-            <button>Explore Collection</button>
+                <div class="collection-image">
+                    <img src="images/warm neutral material moodboard with marble, wood & brass 2 (1).png" alt="">
+                </div>
+
+                <div class="collection-content">
+                    <h2>
+                        Sanitaryware &
+                        Bathroom
+                        Fittings
+                    </h2>
+
+                    <button>Explore Collection</button>
+                </div>
+
+            </div>
         </div>
+    </a>
+        <!-- CARD 3 -->
+    <a href="collection3.html" class="card-link">
+        <div class="card">
+            <div class="card__inner collection-box dark">
 
-    </div>
-    <div class="collection-box reverse light">
+                <div class="collection-image">
+                    <img src="images/Warm Neutral Material Moodboard with Marble, Wood & Brass 4.png" alt="">
+                </div>
 
-        <div class="collection-image large">
-            <img src="images/warm neutral material moodboard with marble, wood & brass 2 (1).png" alt="">
+                <div class="collection-content">
+                    <h2>
+                        Technical
+                        Infrastructure &
+                        Installation
+                        Services
+                    </h2>
 
+                    <button>Explore Collection</button>
+                </div>
+
+            </div>
         </div>
-
-        <div class="collection-content">
-            <h2>
-                Sanitaryware 
-                & Bathroom 
-                Fittings
-            </h2>
-
-            <button>Explore Collection</button>
-        </div>
-
-    </div>
-    <div class="collection-box dark">
-
-        <div class="collection-image large">
-            <img src="images/Warm Neutral Material Moodboard with Marble, Wood & Brass 4.png" alt="">
-        </div>
-
-        <div class="collection-content">
-            <h2>
-                Technical 
-                Infrastructure 
-                & Installation 
-                Services
-            </h2>
-
-            <button>Explore Collection</button>
-        </div>
+    </a>
 
     </div>
 
@@ -79,11 +104,13 @@
 <div id="footer-container"></div>
     <script>
    
-        fetch('./components/navbar.html')
-            .then(response => response.text())
-            .then(data => {
+        Promise.all([
+                fetch('./components/navbar.html').then(r => r.text()),
+                fetch('./components/footer.html').then(r => r.text())
+            ]).then(([navbarData, footerData]) => {
 
-                document.getElementById('navbar-container').innerHTML = data;
+                document.getElementById('navbar-container').innerHTML = navbarData;
+                document.getElementById('footer-container').innerHTML = footerData;
 
                 const menuBtn = document.getElementById("menu-btn");
                 const navLinks = document.getElementById("nav-links");
@@ -92,15 +119,11 @@
                     navLinks.classList.toggle("active");
                 });
 
+                // INIT AFTER EVERYTHING EXISTS
+                initCards();
+
             });
     </script>
-<script>
-fetch('./components/footer.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
-    });
-</script>
-    
+
 </body>
 </html>

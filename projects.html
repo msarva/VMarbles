@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="product.css">
     <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
-
-    <title>Product</title>
+    <script src="projects.js" defer></script>
+    <title>Projects</title>
 </head>
 <body>
     <header>
@@ -18,33 +18,51 @@
     </header>
 
     <section class="featured">
-        <div class="featured-top">
-            <div class="side-thumb">
-                <img src="images/img2.png" alt="">
-            </div>
 
-            <div class="featured-image">
+        <div class="featured-top" id="slider-area">
+
+            <div class="slide active"
+                data-title="Luxury Living Room"
+                data-text="Elegant marble flooring with modern interior aesthetics.">
+
                 <img src="images/img1.png" alt="">
             </div>
+
+            <div class="slide prev"
+                data-title="Premium Kitchen Space"
+                data-text="Sophisticated kitchen design with warm natural textures.">
+
+                <img src="images/img2 (2).png" alt="">
+            </div>
+
+            <div class="slide next"
+                data-title="Modern Bathroom Design"
+                data-text="Minimal and refined marble ambiance for contemporary homes.">
+
+                <img src="images/img3.png" alt="">
+            </div>
+
+            <button class="next-btn" id="next">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
         </div>
 
         <div class="featured-content">
 
             <span class="tag">Featured</span>
 
-            <h1>
-                Luxury Living <br>
-                Room
+            <h1 id="feature-title">
+                Luxury Living Room
             </h1>
 
-            <p>
-                Elegant marble flooring with modern
-                interior aesthetics.
+            <p id="feature-text">
+                Elegant marble flooring with modern interior aesthetics.
             </p>
 
-            </div>
+        </div>
 
-        </section>
+</section>
 
         <section class="portfolio">
 
@@ -102,6 +120,53 @@
         </div>
 
     </section>
+            <div class="project-popup" id="projectPopup">
+
+            <div class="popup-box">
+
+                <button class="close-popup" id="closePopup">
+                    ×
+                </button>
+
+                <div class="popup-left">
+
+                    <button class="popup-arrow left">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <img
+                        id="popupImage"
+                        src="images/Rectangle 7.png"
+                        alt=""
+                    >
+
+                    <button class="popup-arrow right">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                </div>
+
+                <div class="popup-right">
+
+                    <h2 id="popupTitle">
+                        Indoor Project
+                    </h2>
+
+                    <p class="popup-subtitle">
+                        name of home/org
+                    </p>
+
+                    <div class="popup-fields">
+
+                        <label>Selection</label>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     <div id="footer-container"></div>
     <script>

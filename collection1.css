@@ -12,7 +12,10 @@ header{
     padding:30px;
     background-color:rgb(228, 228, 241);
 }
-
+.card-link{
+    text-decoration: none;
+    color: inherit;
+}
 .collection{
   padding: 140px 40px;
 }

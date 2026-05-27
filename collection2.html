@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="collection1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+
+    <title>Collection1</title>
+</head>
+<body>
+    <header>
+      <div id="navbar-container"></div>
+    </header>
+
+    <section class="collection-hero">
+        <div class="hero-text">
+            <h1>
+                Sanitaryware<br>
+                & Bathroom<br>
+                Fittings
+            </h1>
+            <h3>
+              Explore our collection
+              <span>below!</span>
+            </h3>
+            <button class="Button">Connect with us</button>
+        </div>
+    </div>
+
+  </section>
+
+   <section class="collection">
+
+    <div class="filters">
+      <select>
+        <option>Type</option>
+      </select>
+
+      <select>
+        <option>Material</option>
+      </select>
+
+      <select>
+        <option>Color</option>
+      </select>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="images/rectangle 58.png" alt="">
+        <button>view sample</button>
+        <h3>Title</h3>
+      </div>
+
+      <div class="card">
+        <img src="images/rectangle 58.png" alt="">
+        <button>view sample</button>
+        <h3>Title</h3>
+      </div>
+
+      <div class="card">
+        <img src="images/rectangle 58.png" alt="">
+        <button>view sample</button>
+        <h3>Title</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+    <div id="footer-container"></div>
+    <script>
+   
+        fetch('./components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+
+                document.getElementById('navbar-container').innerHTML = data;
+
+                const menuBtn = document.getElementById("menu-btn");
+                const navLinks = document.getElementById("nav-links");
+
+                menuBtn.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                });
+
+            });
+    </script>
+    <script>
+    fetch('./components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+    
+</body>
+</html>
